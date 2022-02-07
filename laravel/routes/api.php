@@ -18,20 +18,12 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::get('/v1/productos', [ProductosController::class, 'getAll']);
-Route::get('/v1/productos/{id}', [ProductosController::class, 'getItem']);
-Route::post('/v1/productos', [ProductosController::class, 'store']);
-Route::put('/v1/productos', [ProductosController::class, 'update']);
-Route::patch('/v1/productos', [ProductosController::class, 'patch']);
-Route::delete('/v1/productos/{id}', [ProductosController::class, 'delete']);
+Route::get('/articulos','App\Http\Controllers\ArticuloController@index');//mostrar
+Route::post('/articulos','App\Http\Controllers\ArticuloController@store');//guardar
+Route::put('/articulos{id}','App\Http\Controllers\ArticuloController@update');//actualizar
+Route::delete('/articulos{id}','App\Http\Controllers\ArticuloController@destroy');//eliminar
 
-
-Route::get('/v1/usuarios', [ProductosController::class, 'getAll']);
-Route::get('/v1/usuarios/{id}', [ProductosController::class, 'getItem']);
-Route::post('/v1/usuarios', [ProductosController::class, 'store']);
-Route::put('/v1/usuarios', [ProductosController::class, 'update']);
-Route::patch('/v1/usuarios', [ProductosController::class, 'patch']);
-Route::delete('/v1/usuarios/{id}', [ProductosController::class, 'delete']);
-
-
-
+Route::get('/productos','App\Http\Controllers\ProductoController@index');//mostrar
+Route::post('/productos','App\Http\Controllers\ProductoController@store');//guardar
+Route::put('/productos{id}','App\Http\Controllers\ProductoController@update');//actualizar
+Route::delete('/productos{id}','App\Http\Controllers\ProductoController@destroy');//eliminar
