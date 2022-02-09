@@ -27,3 +27,6 @@ Route::get('/productos','App\Http\Controllers\ProductoController@index');//mostr
 Route::post('/productos','App\Http\Controllers\ProductoController@store');//guardar
 Route::put('/productos{id}','App\Http\Controllers\ProductoController@update');//actualizar
 Route::delete('/productos{id}','App\Http\Controllers\ProductoController@destroy');//eliminar
+
+
+

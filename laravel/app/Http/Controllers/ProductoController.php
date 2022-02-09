@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use Illuminate\Http\Request;
 use App\Models\Producto;
 
@@ -15,7 +14,8 @@ class ProductoController extends Controller
     public function index()
     {
         $productos = Producto::all();
-        return $productos;
+        return view('producto.index')->with('productos',$productos);
+
     }
 
     /**
@@ -41,6 +41,7 @@ class ProductoController extends Controller
         $productos->nombre = $request->nombre;
         $productos->precio = $request->precio;
         $productos->save();
+        return view('producto.store');
     }
 
     /**
